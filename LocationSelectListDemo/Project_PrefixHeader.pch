@@ -1,0 +1,59 @@
+//
+//  Project_PrefixHeader.pch
+//  LocationSelectListDemo
+//
+//  Created by 何锦涛 on 2017/8/31.
+//  Copyright © 2017年 hither. All rights reserved.
+//
+
+#ifndef Project_PrefixHeader_pch
+#define Project_PrefixHeader_pch
+
+//#####################################################################################
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(1.f)]
+
+#define kVTColorFromHex(hexValue) [UIColor \
+colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((hexValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
+
+//#####################################################################################
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+//#####################################################################################
+
+#define TableViewXIBRegisterCell(tableView, cellClass, cellID) [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([cellClass class]) bundle:nil] forCellReuseIdentifier:cellID];
+
+#define CollectionViewXIBRegisterCell(collectionView, cellClass, cellID) [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([cellClass class]) bundle:nil] forCellWithReuseIdentifier:cellID];
+
+
+#define CollectionViewNOXIBRegisterCell(collectionView, cellClass, cellID) [collectionView registerClass:[cellClass class] forCellWithReuseIdentifier:cellID];
+
+#define TableViewNOXIBRegisterCell(tableView, cellClass, cellID) [tableView registerClass:[cellClass class] forCellReuseIdentifier:cellID];
+
+
+#define DefineCellID(cellIDName, cellStr) static NSString *const cellIDName = cellStr;
+
+//#####################################################################################
+
+#define HJTFont(a) [UIFont fontWithName:@"Helvetica" size:(a)]
+
+//#####################################################################################
+
+#import <CoreLocation/CoreLocation.h>
+#import <Masonry.h>
+#import <MJExtension.h>
+
+//#####################################################################################
+
+static NSString * const cityHeadView = @"cityHeadView";
+static NSString * const hotCityCell = @"hotCityCell";
+static NSString * const cityListCell = @"cityListCell";
+
+#define kCityData @"CityData.plist"
+
+#endif /* Project_PrefixHeader_pch */
